@@ -7,22 +7,22 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const usersRouter = require('./controllers/users');
-const loginRouter = require('./controllers/login');
-
+const loginRouter = require('./controllers/login'); 
 
 (async() => {
-
+    
     try {
         await mongoose.connect(process.env.MONGO_UIR_TEST);
         console.log('Conectado a Mongo DB');
     } catch (error) {
         console.log(error);
     }
-
+    
 })();
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
+
 
 //Rutas frontend
 app.use('/', express.static(path.resolve('views', 'home')));
