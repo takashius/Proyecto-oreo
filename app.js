@@ -30,6 +30,10 @@ app.use('/components', express.static(path.resolve('views', 'components')));
 app.use('/login', express.static(path.resolve('views', 'login')));
 app.use('/inicio', express.static(path.resolve('views', 'inicio')));
 app.use('/verify/:id/:token', express.static(path.resolve('views', 'verify')));
+app.use('/uploads', express.static(path.resolve('uploads')));
+app.use('/create', express.static(path.resolve('views', 'create')));
+
+
 
 
 
