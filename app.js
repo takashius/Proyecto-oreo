@@ -33,6 +33,7 @@ app.use('/inicio', express.static(path.resolve('views', 'inicio')));
 app.use('/verify/:id/:token', express.static(path.resolve('views', 'verify')));
 app.use('/uploads', express.static(path.resolve('uploads')));
 app.use('/create', express.static(path.resolve('views', 'create')));
+app.use('/agendarProducto', express.static(path.resolve('views', 'agendarProducto')));
 
 
 
