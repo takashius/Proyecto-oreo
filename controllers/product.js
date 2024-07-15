@@ -10,6 +10,7 @@ productRouter.post('/', async (req, res) => {
     }
 });
 
+
 productRouter.get('/', async (req, res) => {
     try {
         const product = await Product.find({});
