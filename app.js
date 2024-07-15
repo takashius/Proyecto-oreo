@@ -11,11 +11,12 @@ const loginRouter = require('./controllers/login');
 const logoutRouter = require('./controllers/logout');
 const productRouter = require('./controllers/product');
 const cartRouter = require('./controllers/carrito');
+const { MONGO_URI } = require('./config');
 
 (async() => {
     
     try {
-        await mongoose.connect(process.env.MONGO_UIR_TEST);
+        await mongoose.connect(MONGO_URI);
         console.log('Conectado a Mongo DB');
     } catch (error) {
         console.log(error);
@@ -49,6 +50,7 @@ app.use('/api/products', productRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/logout', logoutRouter);
 app.use('/endpoint/products', productRouter);
+
 
 
 
