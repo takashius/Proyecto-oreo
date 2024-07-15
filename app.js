@@ -10,6 +10,7 @@ const usersRouter = require('./controllers/users');
 const loginRouter = require('./controllers/login'); 
 const logoutRouter = require('./controllers/logout');
 const productRouter = require('./controllers/product');
+const cartRouter = require('./controllers/carrito');
 
 (async() => {
     
@@ -44,9 +45,8 @@ app.use(morgan('tiny'));
 //Rutas backend
 app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
-app.use('/api/logout', logoutRouter);
-
-app.use('/endpoint/products', productRouter);
+app.use('/api/products', productRouter);
+app.use('/api/cart', cartRouter);
 
 
 
