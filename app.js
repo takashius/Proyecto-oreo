@@ -7,22 +7,22 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const usersRouter = require('./controllers/users');
-const loginRouter = require('./controllers/login'); 
+const loginRouter = require('./controllers/login');
 const logoutRouter = require('./controllers/logout');
 const productRouter = require('./controllers/product');
 const cartRouter = require('./controllers/carrito');
 const { MONGO_URI } = require('./config');
 const imageRouter = require('./controllers/image');
 
-(async() => {
-    
+(async () => {
+
     try {
         await mongoose.connect(MONGO_URI);
         console.log('Conectado a Mongo DB');
     } catch (error) {
         console.log(error);
     }
-    
+
 })();
 app.use(cors());
 app.use(express.json());
@@ -31,6 +31,7 @@ app.use(cookieParser());
 
 //Rutas frontend
 app.use('/', express.static(path.resolve('views', 'home')));
+app.use('/style', express.static(path.resolve('views', 'style')));
 app.use('/components', express.static(path.resolve('views', 'components')));
 app.use('/login', express.static(path.resolve('views', 'login')));
 app.use('/inicio', express.static(path.resolve('views', 'inicio')));
