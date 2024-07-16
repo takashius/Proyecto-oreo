@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+const bodyParser = require('body-parser')
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
@@ -24,6 +25,7 @@ const imageRouter = require('./controllers/image');
     }
 
 })();
+//app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
